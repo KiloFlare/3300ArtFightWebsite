@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -10,4 +11,7 @@ urlpatterns = [
 # example in html <a href="{% url 'index' %}">Home</a>.
     path('', views.index, name='index'),
     path('recent/', views.recent, name='recent'),
+    path('individualArt/<int:pk>', views.individualArtView.as_view(), name='individualArt-detail'),
+    path('art/upload/', views.uploadArtForm, name='upload-art-form'),
+
 ]

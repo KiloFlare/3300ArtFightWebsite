@@ -5,7 +5,12 @@
 <!-- Replace block content in base_template.html -->
 {% block content %}
 <h1 class="">Recently Uploaded Art:</h1>
+<a class="btn btn-outline-light align-left" href="{% url 'upload-art-form' %}" role="button">Create</a>
 <div class="container  align-items-center justify-content-center text-wrap" style="width: 20rem;">
-    
+    {%for art in art_list %}
+        <li class="list-group-item" style="color:white">Name: {{art.title}}
+            <a class="btn btn-outline-light btn-sm" href="{{art.get_absolute_url}}" role="button">View</a>
+        </li>
+    {%endfor%}
 </div>
 {%endblock%}
