@@ -13,5 +13,8 @@ urlpatterns = [
     path('recent/', views.recent, name='recent'),
     path('individualArt/<int:pk>', views.individualArtView.as_view(), name='individualArt-detail'),
     path('art/upload/', views.uploadArtForm, name='upload-art-form'),
+    path('art/<int:id>/update/', views.updateIndividualArtForm, name='update-art-form'),
+    path('art/<int:id>/delete/', views.deleteIndividualArtForm, name='delete-art-form'),
+
 
 ]
