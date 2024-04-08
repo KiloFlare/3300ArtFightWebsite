@@ -4,3 +4,7 @@ from django.http import HttpResponse
 def index(request):
     # Render the HTML template index.html with the data in the context variable.
    return render( request, 'artfight_app/index.html')
+
+def recent(request):
+    # Render the HTML template index.html with the data in the context variable.
+   return render( request, 'artfight_app/recent.html')
