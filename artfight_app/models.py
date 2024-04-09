@@ -13,7 +13,7 @@ class User(models.Model):
 
 class IndividualArt(models.Model):
     title = models.CharField(max_length=200)
-    artPiece = models.ImageField(upload_to ='uploads/', blank=False, null=False)
+    artPiece = models.ImageField(upload_to ='static/uploads/', blank=False, null=False)
     description = models.TextField(blank = True)
     user=models.ForeignKey(User, on_delete=models.RESTRICT)
 
