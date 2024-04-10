@@ -6,11 +6,13 @@
 {% block content %}
 <h1 class="">Recently Uploaded Art:</h1>
 <a class="btn btn-outline-light align-left" href="{% url 'upload-art-form' %}" role="button">Create</a>
-<div class="container  align-items-center justify-content-center text-wrap" style="width: 20rem;">
+<div class="container d-flex align-items-center text-wrap" style="width: 90%;">
     {%for art in art_list %}
-        <li class="list-group-item" style="color:white">Name: {{art.title}}
-            <a class="btn btn-outline-light btn-sm" href="{{art.get_absolute_url}}" role="button">View</a>
-        </li>
+        <div class="card" style="width: 30rem; background-color:black">
+            <img src="{{art.artPiece.url}}" class="card-img-top" alt="...">
+            <a href="{{art.get_absolute_url}}" class="link-light fs-4">{{art.title}}</a>
+            <a href="#" class="link-light" style="color:#b3b3b3">{{art.user.name}}</a>
+        </div>
     {%endfor%}
 </div>
 {%endblock%}
