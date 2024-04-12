@@ -16,5 +16,4 @@ urlpatterns = [
     path('art/<int:id>/update/', views.updateIndividualArtForm, name='update-art-form'),
     path('art/<int:id>/delete/', views.deleteIndividualArtForm, name='delete-art-form'),
 
-
 ]

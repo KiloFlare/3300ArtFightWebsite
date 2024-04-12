@@ -4,14 +4,20 @@
 <!-- Replace block content in base_template.html -->
 {% block content %}
 
-    <div class="d-flex justify-content-center">
+    <div class=" justify-content-center">
         <img src="{{object.artPiece.url}}" style="width:85%">
+
+        <div class="justify-content-right" style="width:85%">
+            <a class="btn btn-outline-light btn-sm align-right" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
+            <a class="btn btn-outline-light btn-sm pull-right" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
+        </div>
+
+        <div class="card p-2" style="width: 85%; background-color:#1a1a1a">
+            <h1 class="text-center">{{object.title}}</h1>
+            <p></p>
+            <p class="text-center"><strong>About: </strong>{{object.description}}</p>
+        </div>
     </div>
-    
-    <h1>{{object.title}}</h1>
-    <a class="btn btn-outline-light btn-sm" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
-    <a class="btn btn-outline-light btn-sm" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
-    <p><strong>About: </strong>{{object.description}}</p>
     
 
 {% endblock %}

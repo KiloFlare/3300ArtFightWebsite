@@ -23,3 +23,7 @@ urlpatterns = [
     path('', include('artfight_app.urls')),
 ]
 
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
+

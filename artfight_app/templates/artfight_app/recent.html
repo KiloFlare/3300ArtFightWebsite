@@ -4,15 +4,20 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1 class="">Recently Uploaded Art:</h1>
-<a class="btn btn-outline-light align-left" href="{% url 'upload-art-form' %}" role="button">Create</a>
-<div class="container d-flex align-items-center text-wrap" style="width: 90%;">
-    {%for art in art_list %}
-        <div class="card" style="width: 30rem; background-color:black">
-            <img src="{{art.artPiece.url}}" class="card-img-top" alt="...">
-            <a href="{{art.get_absolute_url}}" class="link-light fs-4">{{art.title}}</a>
-            <a href="#" class="link-light" style="color:#b3b3b3">{{art.user.name}}</a>
+    <h1 class="">Recently Uploaded Art:</h1>
+    <a class="btn btn-outline-light align-left" href="{% url 'upload-art-form' %}" role="button">Create</a>
+    
+    <p></p>
+
+    <div class="container d-grid align-items-center text-wrap gap-2" style="width: 95%;">
+        <div class="row row-cols-4 gap-3">
+            {%for art in art_list %}
+                <div class="card p-2" style="width: 22rem; background-color:#1a1a1a; border-color: #6e6e6e">
+                    <img src="{{art.artPiece.url}}" class="card-img-top" alt="...">
+                    <a href="{{art.get_absolute_url}}" class="nav-link fs-4">{{art.title}}</a>
+                    <a href="#" class="nav-link" style="color:#b3b3b3">{{art.user.name}}</a>
+                </div>
+            {%endfor%}
         </div>
-    {%endfor%}
-</div>
+    </div>
 {%endblock%}
