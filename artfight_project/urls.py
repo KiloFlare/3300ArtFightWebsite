@@ -21,9 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #connect path to portfolio_app urls
     path('', include('artfight_app.urls')),
-]
-
-urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
 

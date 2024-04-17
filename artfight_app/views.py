@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
 from .models import *
 from django.views import generic
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import *
+from .decorators import has_permission
+
+#Permissions Testing
 
 
 # Page View Functions
@@ -23,6 +25,7 @@ class individualArtView(generic.DetailView):
     model = IndividualArt
 
 #Forms Functions
+@has_permission('create_individualArt')
 def uploadArtForm(request):
    if request.method == 'POST':
         form = UploadArt(request.POST, request.FILES)
