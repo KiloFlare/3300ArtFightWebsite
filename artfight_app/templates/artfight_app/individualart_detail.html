@@ -5,15 +5,17 @@
 {% block content %}
 
     <div class=" justify-content-center">
-        <img src="{{object.artPiece.url}}" style="width:85%">
+        <img src="{{object.artPiece.url}}" class="object-fit-scale" style="width:85%">
 
         <div class="justify-content-right" style="width:85%">
-            <a class="btn btn-outline-light btn-sm align-right" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
-            <a class="btn btn-outline-light btn-sm pull-right" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
+            <a class="btn btn-outline-warning btn-sm align-right" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
+            <a class="btn btn-outline-warning btn-sm pull-right" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
+            <a class="btn btn-light btn-sm align-right" href="{% url 'upload-duel-form' object.id %}" role="button">FIGHT</a>
         </div>
 
         <div class="card p-2" style="width: 85%; background-color:#1a1a1a">
             <h1 class="text-center">{{object.title}}</h1>
+            <a href="#" class="nav-link text-center" style="color:#b3b3b3">By: {{object.user.username}}</a>
             <p></p>
             <p class="text-center"><strong>About: </strong></p>
             <p class="text-center">{{object.description}}</p>

@@ -1,0 +1,71 @@
+<!-- inherit from base.html-->
+{% extends "artFight_app/base_template.html" %}
+
+<!-- Replace block content in base_template.html -->
+{% block content %}
+
+<!-- Display both art pieces -->
+    <div class="row align-items-center justify-content-center">
+        <div class="col" style="width: 85%">
+            <img src="{{object.artOne.artPiece.url}}" class="object-fit-scale" style="width:90%; max-height: 30rem">
+        </div>
+
+        <div class="col" style="width: 85%">
+            <img src="{{object.artTwo.artPiece.url}}" class="object-fit-scale" style="max-width:90%; max-height: 30rem">
+        </div>
+        <p></p>
+    </div>
+
+    <!-- Duel Title -->
+    
+    <div class="card p-2" style="width: 85%; background-color:#1a1a1a">
+        <p></p>
+        <h1 class="text-center">{{object.title}}</h1>
+        <p></p>
+        
+    </div>
+
+    <div class="row align-items-center justify-content-center">
+
+        <!-- Art One Column -->
+        <div class="col">
+            <div class="justify-content-right" style="width:85%">
+                <a class="btn btn-outline-light btn-sm align-right" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
+                <a class="btn btn-outline-light btn-sm pull-right" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
+            </div>
+    
+            <div class="card p-2" style="width: 85%; background-color:#1a1a1a">
+                <h1 class="text-center">{{object.artOne.title}}</h1>
+                <a href="#" class="nav-link text-center" style="color:#b3b3b3">By: {{object.artOne.user.username}}</a>
+                <p></p>
+                <p class="text-center"><strong>About: </strong></p>
+                <p class="text-center">{{object.artOne.description}}</p>
+                
+            </div>
+
+        </div>
+
+        <!-- Art Two Column -->
+        <div class="col">
+            <div class="justify-content-right" style="width:85%">
+                <a class="btn btn-outline-light btn-sm align-right" href="{% url 'update-art-form' object.id %}" role="button">Update</a>
+                <a class="btn btn-outline-light btn-sm pull-right" href="{% url 'delete-art-form' object.id %}" role="button">Delete</a>
+            </div>
+    
+            <div class="card p-2" style="width: 85%; background-color:#1a1a1a">
+                <h1 class="text-center">{{object.artTwo.title}}</h1>
+                <a href="#" class="nav-link text-center" style="color:#b3b3b3">By: {{object.artTwo.user.username}}</a>
+                <p></p>
+                <p class="text-center"><strong>About: </strong></p>
+                <p class="text-center">{{object.artTwo.description}}</p>
+                
+            </div>
+
+        </div>
+        
+    </div>
+
+    <p></p>
+    
+
+{% endblock %}

@@ -23,6 +23,11 @@
   p    {color: #dbd9b4;}
   td    {color: #dbd9b4;}
 
+    .frm 
+    {
+      color: white;
+    }
+
   .navbar-custom {
     background-color: #1a1a1a;
     text-color: white;
@@ -53,6 +58,7 @@
              <!--  {% url 'index' %}  is defined in url path to dynamically create url -->
              <a class="nav-link" aria-current="page" href="{% url 'index' %}">Welcome</a>
              <a class="nav-link" aria-current="page" href="{% url 'recent' %}">Recent</a>
+             <a class="nav-link" aria-current="page" href="{% url 'duels' %}">Duels</a>
            </div>
            <div class="container-xl"> </div>
             {% if user.is_authenticated %}

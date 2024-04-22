@@ -15,5 +15,10 @@ urlpatterns = [
     path('art/upload/', views.uploadArtForm, name='upload-art-form'),
     path('art/<int:id>/update/', views.updateIndividualArtForm, name='update-art-form'),
     path('art/<int:id>/delete/', views.deleteIndividualArtForm, name='delete-art-form'),
+    path('duels/', views.duelsPage, name='duels'),
+    path('duels/<int:pk>', views.DuelView.as_view(), name='duel-detail'),
+    path('duels/upload/<int:id>', views.uploadDuelForm, name='upload-duel-form'),
+
+
 
 ]

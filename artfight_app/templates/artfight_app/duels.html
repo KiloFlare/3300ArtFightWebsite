@@ -1,0 +1,28 @@
+<!-- inherit from base.html-->
+{% extends "artfight_app/base_template.html" %}
+
+
+<!-- Replace block content in base_template.html -->
+{% block content %}
+    <h1 class="">Duels:</h1>
+    
+    <p></p>
+
+    <div class="container d-grid align-items-center text-wrap gap-2" style="width: 95%;">
+        <div class="row row-cols-4 gap-3">
+            {%for duel in duel_list %}
+                <div class="card p-2" style="width: 22rem; background-color:#1a1a1a; border-color: #6e6e6e">
+                    <div class="d-flex">
+                        <img src="{{duel.artOne.artPiece.url}}" class="object-fit-scale" alt="..." style="max-height:80%; width:50%">
+                        <img src="{{duel.artTwo.artPiece.url}}" class="object-fit-scale" alt="..." style="max-height:80%; width:50%">
+                    </div>
+                    <a href="{{duel.get_absolute_url}}" class="nav-link fs-4">{{duel.title}}</a>
+                    <a href="#" class="nav-link" style="color:#b3b3b3">{{duel.artOne.user.username}}</a>
+                    <a href="#" class="nav-link" style="color:#b3b3b3">{{duel.artTwo.user.username}}</a>
+
+                   
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+{%endblock%}

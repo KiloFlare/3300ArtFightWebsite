@@ -12,10 +12,10 @@
     <div class="container d-grid align-items-center text-wrap gap-2" style="width: 95%;">
         <div class="row row-cols-4 gap-3">
             {%for art in art_list %}
-                <div class="card p-2" style="width: 22rem; background-color:#1a1a1a; border-color: #6e6e6e">
-                    <img src="{{art.artPiece.url}}" class="card-img-top" alt="...">
+                <div class="card p-2" style="width: 22rem; height: 22rem; background-color:#1a1a1a; border-color: #6e6e6e">
+                    <img src="{{art.artPiece.url}}" class="object-fit-scale" alt="..." style="max-height:80%">
                     <a href="{{art.get_absolute_url}}" class="nav-link fs-4">{{art.title}}</a>
-                    <a href="#" class="nav-link" style="color:#b3b3b3">{{art.user.name}}</a>
+                    <a href="#" class="nav-link" style="color:#b3b3b3">{{art.user.username}}</a>
                 </div>
             {%endfor%}
         </div>
